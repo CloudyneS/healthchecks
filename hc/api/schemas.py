@@ -11,6 +11,7 @@ check = {
         "schedule": {"type": "string", "format": "cron", "maxLength": 100},
         "tz": {"type": "string", "format": "timezone", "maxLength": 36},
         "channels": {"type": "string"},
+        "slug": {"type": "string", "maxLength": 36},
         "manual_resume": {"type": "boolean"},
         "methods": {"enum": ["", "POST"]},
         "subject": {"type": "string", "maxLength": 200},
@@ -22,7 +23,7 @@ check = {
         "filter_body": {"type": "boolean"},
         "unique": {
             "type": "array",
-            "items": {"enum": ["name", "tags", "timeout", "grace"]},
+            "items": {"enum": ["name", "tags", "timeout", "grace", "slug"]},
         },
     },
 }

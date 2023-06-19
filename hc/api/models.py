@@ -231,6 +231,9 @@ class Check(models.Model):
             return self.last_duration
         return None
 
+    def set_slug(self, slug: str) -> None:
+        self.slug = slugify(slug)
+
     def set_name_slug(self, name: str) -> None:
         self.name = name
         self.slug = slugify(name)

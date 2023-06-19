@@ -1,5 +1,10 @@
 # Healthchecks
 
+# Notice
+This is a slightly modified version of healthchecks 2.9.2, with support for manually setting the slug via the v2 API, fix for running behind oauth-proxy and some other small changes.
+
+
+
 ![Build Status](https://github.com/healthchecks/healthchecks/workflows/Django%20CI/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/healthchecks/healthchecks/badge.svg?branch=master&service=github)](https://coveralls.io/github/healthchecks/healthchecks?branch=master)
 

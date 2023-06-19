@@ -117,6 +117,8 @@ def _lookup(project, spec):
             existing_checks = existing_checks.filter(name=spec.get("name"))
         if "tags" in unique_fields:
             existing_checks = existing_checks.filter(tags=spec.get("tags"))
+        if "slug" in unique_fields:
+            existing_checks = existing_checks.filter(slug=spec.get("slug"))
         if "timeout" in unique_fields:
             timeout = td(seconds=spec["timeout"])
             existing_checks = existing_checks.filter(timeout=timeout)
@@ -163,6 +165,10 @@ def _update(check, spec):
 
     if "name" in spec and check.name != spec["name"]:
         check.set_name_slug(spec["name"])
+        need_save = True
+    
+    if "slug" in spec and check.slug != spec["slug"]:
+        check.set_slug(spec["slug"])
         need_save = True
 
     if "timeout" in spec and "schedule" not in spec:
